@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🍦 Figurative Language – Adiaha's NO-CAP Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink:#ff6eb4;--purple:#a855f7;--blue:#3b82f6;--cyan:#06b6d4;
+    --green:#22c55e;--yellow:#fbbf24;--orange:#f97316;--red:#ef4444;
+    --cream:#fffbf0;--dark:#1e1b2e;
+    --shadow:0 8px 32px rgba(0,0,0,0.12);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);min-height:100vh}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#ff6eb4,#a855f7,#3b82f6,#06b6d4);padding:48px 24px 36px;text-align:center;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='3' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E") repeat}
+  .hero h1{font-family:'Fredoka One',cursive;font-size:clamp(1.9rem,6vw,3.2rem);color:white;text-shadow:3px 3px 0 rgba(0,0,0,0.18);position:relative}
+  .hero p{color:rgba(255,255,255,0.92);font-weight:700;font-size:1.1rem;margin-top:10px;position:relative}
+  .ice-banner{background:rgba(255,255,255,0.2);backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,0.4);border-radius:50px;display:inline-block;padding:8px 28px;margin-top:14px;color:white;font-weight:900;font-size:1rem;position:relative}
+
+  /* TABS */
+  .tabs{display:flex;justify-content:center;gap:8px;padding:16px 12px;flex-wrap:wrap;background:white;box-shadow:0 2px 12px rgba(0,0,0,0.07);position:sticky;top:0;z-index:100}
+  .tab-btn{font-family:'Fredoka One',cursive;font-size:0.95rem;padding:9px 18px;border:none;border-radius:50px;cursor:pointer;background:#f1f5f9;color:#64748b;transition:all .2s}
+  .tab-btn.active,.tab-btn:hover{background:linear-gradient(135deg,var(--pink),var(--purple));color:white;transform:translateY(-2px);box-shadow:0 4px 15px rgba(168,85,247,.35)}
+
+  /* SECTIONS */
+  .section{display:none;padding:28px 16px 60px;max-width:980px;margin:0 auto}
+  .section.active{display:block}
+  .sec-title{font-family:'Fredoka One',cursive;font-size:1.9rem;color:var(--purple);text-align:center;margin-bottom:4px}
+  .sec-sub{color:#64748b;font-weight:700;text-align:center;margin-bottom:24px;font-size:.95rem}
+
+  /* DEVICE CARDS */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px;margin-top:16px}
+  .card{border-radius:22px;padding:24px;box-shadow:var(--shadow);animation:popIn .4s ease both}
+  @keyframes popIn{from{opacity:0;transform:scale(.9) translateY(14px)}to{opacity:1;transform:scale(1) translateY(0)}}
+
+  .card h2{font-family:'Fredoka One',cursive;font-size:1.6rem;color:white;margin-bottom:4px}
+  .card.y7 h2{color:#78350f}
+  .card .emoji{font-size:2.2rem;display:block;margin-bottom:8px}
+  .card .def{color:rgba(255,255,255,.93);font-weight:700;font-size:.93rem;line-height:1.55}
+  .card.y7 .def{color:#92400e}
+  .card .slang{background:rgba(255,255,255,.22);border-radius:10px;padding:8px 12px;margin-top:12px;font-size:.85rem;font-weight:800;font-style:italic;color:white}
+  .card.y7 .slang{color:#78350f}
+  .card .eg-label{font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.7);margin-top:14px;margin-bottom:4px}
+  .card.y7 .eg-label{color:#a16207}
+  .card .eg{background:rgba(255,255,255,.18);border-radius:8px;padding:7px 10px;font-size:.88rem;font-weight:700;color:white;margin-bottom:5px;font-style:italic}
+  .card.y7 .eg{color:#78350f}
+
+  /* colours per device */
+  .c1{background:linear-gradient(135deg,#ff6eb4,#ff99cc)}
+  .c2{background:linear-gradient(135deg,#a855f7,#c084fc)}
+  .c3{background:linear-gradient(135deg,#3b82f6,#60a5fa)}
+  .c4{background:linear-gradient(135deg,#06b6d4,#22d3ee)}
+  .c5{background:linear-gradient(135deg,#22c55e,#4ade80)}
+  .c6{background:linear-gradient(135deg,#f97316,#fb923c)}
+  .c7{background:linear-gradient(135deg,#fbbf24,#fde68a)} /* yellow – dark text */
+  .c8{background:linear-gradient(135deg,#ef4444,#f87171)}
+  .c9{background:linear-gradient(135deg,#8b5cf6,#a78bfa)}
+  .c10{background:linear-gradient(135deg,#0ea5e9,#38bdf8)}
+
+  /* QUICK TIPS */
+  .tip-box{background:white;border-left:6px solid var(--purple);border-radius:14px;padding:18px 22px;margin-top:24px;box-shadow:var(--shadow)}
+  .tip-box h3{font-family:'Fredoka One',cursive;font-size:1.25rem;color:var(--purple);margin-bottom:10px}
+  .tip-box ul{list-style:none;padding:0}
+  .tip-box li{padding:4px 0;font-weight:700;font-size:.93rem}
+  .tip-box li::before{content:'✨ '}
+
+  /* COMPARISON TABLE */
+  .compare-table{width:100%;border-collapse:collapse;margin-top:20px;font-size:.9rem;font-weight:700}
+  .compare-table th{background:linear-gradient(135deg,var(--pink),var(--purple));color:white;padding:12px 16px;text-align:left;font-family:'Fredoka One',cursive;font-size:1rem}
+  .compare-table td{padding:11px 16px;border-bottom:2px solid #f1f5f9}
+  .compare-table tr:nth-child(even) td{background:#faf5ff}
+  .compare-table tr:hover td{background:#f3e8ff}
+
+  /* PUNS JOKE BOX */
+  .joke-box{background:linear-gradient(135deg,#fef9c3,#fde68a);border:3px solid #fbbf24;border-radius:18px;padding:20px 22px;margin-top:24px}
+  .joke-box h3{font-family:'Fredoka One',cursive;color:#92400e;font-size:1.25rem;margin-bottom:12px}
+  .joke{background:white;border-radius:10px;padding:10px 14px;margin-bottom:10px;font-weight:700;font-size:.9rem;color:#78350f}
+  .joke span{display:block;color:#f97316;font-size:.82rem;margin-top:4px}
+
+  /* QUIZ AREA */
+  .quiz-header{text-align:center;margin-bottom:28px}
+  .quiz-header h2{font-family:'Fredoka One',cursive;font-size:2rem;color:var(--purple)}
+  .quiz-header p{font-weight:700;color:#64748b;margin-top:6px}
+  .prog-wrap{background:#e2e8f0;border-radius:50px;height:14px;margin:14px 0;overflow:hidden}
+  .prog-bar{height:100%;background:linear-gradient(90deg,var(--pink),var(--purple));border-radius:50px;transition:width .4s;width:0}
+
+  .q-block{background:white;border-radius:18px;padding:22px;margin-bottom:20px;box-shadow:var(--shadow);border:2px solid transparent;transition:border-color .3s}
+  .q-block.correct{border-color:var(--green)}
+  .q-block.wrong{border-color:var(--red)}
+  .q-num{font-family:'Fredoka One',cursive;font-size:.82rem;color:var(--purple);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px}
+  .q-text{font-size:1rem;font-weight:800;margin-bottom:14px;line-height:1.45}
+  .hl{color:var(--pink);font-style:italic}
+
+  .mc-opts{display:flex;flex-direction:column;gap:9px}
+  .mc-opt{border:2.5px solid #e2e8f0;border-radius:12px;padding:11px 16px;font-weight:700;font-size:.92rem;cursor:pointer;transition:all .2s;background:#f8fafc;text-align:left}
+  .mc-opt:hover{border-color:var(--purple);background:#faf5ff;transform:translateX(4px)}
+  .mc-opt.selected{border-color:var(--blue);background:#eff6ff}
+  .mc-opt.rev-correct{border-color:var(--green)!important;background:#f0fdf4!important;color:var(--green)!important}
+  .mc-opt.rev-wrong{border-color:var(--red)!important;background:#fef2f2!important;color:var(--red)!important}
+
+  .tf-opts{display:flex;gap:12px;flex-wrap:wrap}
+  .tf-btn{padding:11px 30px;border:2.5px solid #e2e8f0;border-radius:12px;font-family:'Fredoka One',cursive;font-size:1.05rem;cursor:pointer;background:#f8fafc;transition:all .2s}
+  .tf-btn:hover{transform:scale(1.05)}
+  .tf-btn.sel-t{border-color:var(--blue);background:#eff6ff}
+  .tf-btn.sel-f{border-color:var(--orange);background:#fff7ed}
+  .tf-btn.rev-correct{border-color:var(--green)!important;background:#f0fdf4!important;color:var(--green)!important}
+  .tf-btn.rev-wrong{border-color:var(--red)!important;background:#fef2f2!important;color:var(--red)!important}
+
+  /* DRAG */
+  .pool{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .chip{background:linear-gradient(135deg,var(--pink),var(--purple));color:white;padding:8px 15px;border-radius:50px;font-weight:800;font-size:.88rem;cursor:grab;user-select:none;touch-action:none;transition:transform .15s,box-shadow .15s;box-shadow:0 3px 10px rgba(168,85,247,.3)}
+  .chip:active{cursor:grabbing;transform:scale(1.08)}
+  .chip.placed{opacity:0;pointer-events:none}
+  .drop-row{display:flex;align-items:center;gap:10px;background:#f8fafc;border-radius:12px;padding:9px 12px;border:2px dashed #cbd5e1;min-height:46px;margin-bottom:7px;transition:border-color .2s,background .2s}
+  .drop-row.drag-over{border-color:var(--purple);background:#faf5ff}
+  .drop-row.rev-correct{border-color:var(--green);background:#f0fdf4}
+  .drop-row.rev-wrong{border-color:var(--red);background:#fef2f2}
+  .drop-label{font-weight:800;color:#475569;font-size:.88rem;white-space:nowrap;min-width:90px}
+  .drop-zone{flex:1;min-height:34px;display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+  .pchip{background:linear-gradient(135deg,var(--blue),var(--cyan));color:white;padding:6px 12px;border-radius:50px;font-weight:800;font-size:.83rem;display:flex;align-items:center;gap:6px}
+  .rm{cursor:pointer;opacity:.8;transition:opacity .15s}
+  .rm:hover{opacity:1}
+
+  /* TAP */
+  .tap-wrap{margin-top:8px}
+  .tap-row{display:flex;gap:12px;flex-wrap:wrap}
+  .tap-col{flex:1;min-width:180px}
+  .tap-col-label{font-weight:900;font-size:.78rem;color:#64748b;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+  .tap-chip{display:inline-block;padding:8px 16px;margin:3px;border-radius:50px;font-weight:800;font-size:.88rem;cursor:pointer;border:2.5px solid transparent;transition:all .18s}
+  .wchip{background:#f1f5f9;border-color:#cbd5e1;color:#334155}
+  .wchip:hover{border-color:var(--purple);background:#faf5ff}
+  .wchip.sel{background:linear-gradient(135deg,var(--pink),var(--purple));color:white;border-color:transparent;transform:scale(1.06)}
+  .wchip.done{background:var(--green);color:white;border-color:transparent;cursor:default}
+  .cchip{background:white;border-color:#a5b4fc;color:#4f46e5}
+  .cchip:hover{background:#eef2ff}
+  .cchip.matched{background:var(--green);color:white;border-color:transparent;cursor:default}
+  .cchip.bad{background:var(--red);color:white;border-color:transparent}
+
+  .fb{display:none;margin-top:10px;padding:10px 14px;border-radius:10px;font-weight:800;font-size:.9rem}
+  .fb.ok{display:block;background:#f0fdf4;color:#16a34a;border:1.5px solid var(--green)}
+  .fb.no{display:block;background:#fef2f2;color:#dc2626;border:1.5px solid var(--red)}
+
+  .submit-btn{display:block;width:100%;max-width:400px;margin:32px auto 0;padding:18px;font-family:'Fredoka One',cursive;font-size:1.35rem;border:none;border-radius:60px;background:linear-gradient(135deg,var(--pink),var(--purple),var(--blue));color:white;cursor:pointer;box-shadow:0 8px 30px rgba(168,85,247,.4);transition:transform .2s,box-shadow .2s}
+  .submit-btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 14px 40px rgba(168,85,247,.5)}
+
+  .score-card{display:none;background:white;border-radius:28px;padding:40px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.18);margin:32px auto;max-width:560px;animation:popIn .5s ease}
+  .score-card.show{display:block}
+  .score-emoji{font-size:5rem}
+  .score-card h2{font-family:'Fredoka One',cursive;font-size:2.2rem;margin:12px 0}
+  .score-card p{font-weight:700;color:#64748b;font-size:1rem;line-height:1.65}
+  .retry-btn{display:inline-block;margin-top:20px;padding:14px 40px;font-family:'Fredoka One',cursive;font-size:1.15rem;border:none;border-radius:50px;background:linear-gradient(135deg,var(--pink),var(--purple));color:white;cursor:pointer;box-shadow:0 6px 20px rgba(168,85,247,.3)}
+
+  @media(max-width:560px){.tap-row{flex-direction:column}.match-container{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>✨ Figurative Language<br>Adiaha's NO-CAP Study Guide</h1>
+  <p>Test is TOMORROW bestie. We are NOT fumbling this. 🔒💅</p>
+  <div class="ice-banner">🍦 100% = Ice Cream. The math is ALWAYS mathing. 🍦</div>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="showTab('guide')">📖 Guide</button>
+  <button class="tab-btn" onclick="showTab('quiz')">✏️ Quiz (50 Qs)</button>
+</div>
+
+<!-- ══════════ GUIDE ══════════ -->
+<div id="guide" class="section active">
+  <h2 class="sec-title">The Figurative Language Devices 🌈</h2>
+  <p class="sec-sub">Everything from your notebook — studied, summarised, and served with extra sauce 💅</p>
+
+  <div class="grid">
+
+    <!-- SIMILE -->
+    <div class="card c1" style="animation-delay:.05s">
+      <span class="emoji">🔭</span>
+      <h2>Simile</h2>
+      <p class="def">A comparison between two things using the words <strong>LIKE, AS,</strong> or <strong>THAN</strong>. It's a weaker comparison than a metaphor — only SOME things are being compared.</p>
+      <div class="slang">💀 "Simile is like the junior version of metaphor ngl"</div>
+      <div class="eg-label">Examples from your notes</div>
+      <div class="eg">"He is like a rocket on his bike."</div>
+      <div class="eg">"The car was as fast as the wind."</div>
+      <div class="eg">"Harry ran faster than the wind."</div>
+      <div class="eg">"The fresh apple was crispy like a new dollar bill."</div>
+      <div class="eg">"The swing rocked like a baby learning how to walk."</div>
+    </div>
+
+    <!-- METAPHOR -->
+    <div class="card c2" style="animation-delay:.1s">
+      <span class="emoji">💫</span>
+      <h2>Metaphor</h2>
+      <p class="def">A direct comparison between two things WITHOUT using like, as, or than. It says one thing <strong>IS</strong> something else. Compares ALL elements/features — stronger than a simile!</p>
+      <div class="slang">🔥 "Metaphors just say it straight. No 'like' or 'as' needed — main character behaviour."</div>
+      <div class="eg-label">Examples from your notes</div>
+      <div class="eg">"Her eyes are twinkling stars in the night sky."</div>
+      <div class="eg">"Coffee is life as it awakens me."</div>
+      <div class="eg">"The stage was the canvas upon which the play was painted."</div>
+      <div class="eg">"Fruit is fuel for a healthy body."</div>
+      <div class="eg">"Music is medicine for the soul."</div>
+      <div class="eg">"The clock is the keeper of time."</div>
+    </div>
+
+    <!-- PERSONIFICATION -->
+    <div class="card c3" style="animation-delay:.15s">
+      <span class="emoji">🧍</span>
+      <h2>Personification</h2>
+      <p class="def">Giving <strong>human attributes to inanimate (non-living) objects</strong>. It brings non-living things alive by describing them doing things a human would do. Helps you imagine things more clearly!</p>
+      <div class="slang">😭 "Personification is when objects start acting all human and dramatic fr"</div>
+      <div class="eg-label">Examples from your notes</div>
+      <div class="eg">"The alarm screamed as it woke me." (alarm = object; screamed = human action)</div>
+      <div class="eg">"The boat slept peacefully on the water."</div>
+      <div class="eg">"The fire roared to life."</div>
+      <div class="eg">"The glasses danced on the shelf during the earthquake."</div>
+      <div class="eg">"The rusty door hinge screamed every time the door opened."</div>
+      <div class="eg">"The water called invitingly to the hot children."</div>
+      <div class="eg">"The train screamed as it made its way to us."</div>
+    </div>
+
+    <!-- HYPERBOLE -->
+    <div class="card c4" style="animation-delay:.2s">
+      <span class="emoji">📢</span>
+      <h2>Hyperbole</h2>
+      <p class="def">A <strong>gross exaggeration</strong> used to emphasise a point. Hyperboles <strong>CANNOT literally happen</strong> — they are impossible in real life!</p>
+      <div class="slang">🗣️ "Hyperboles are when you're being EXTRA on purpose. Absolutely no cap intended."</div>
+      <div class="eg-label">Examples from your notes</div>
+      <div class="eg">"I am so hungry I could eat a horse." (you literally cannot eat an entire horse 😭)</div>
+      <div class="eg">"Mrs. Terry gave us a mountain of homework."</div>
+      <div class="eg">"The phone rang a million times today."</div>
+      <div class="eg">"I need as many flowers as I kill when I walk by."</div>
+      <div class="eg">"Mary sweats buckets after her race."</div>
+      <div class="eg">"The car was a jet when it passed us."</div>
+    </div>
+
+    <!-- ALLITERATION -->
+    <div class="card c5" style="animation-delay:.25s">
+      <span class="emoji">🔤</span>
+      <h2>Alliteration</h2>
+      <p class="def">The <strong>repetition of the same sound three or more times in close succession</strong>. Found almost always in poetry. Two types: <strong>Assonance</strong> (vowel sounds) and <strong>Consonance</strong> (consonant sounds).</p>
+      <div class="slang">✨ "Alliteration when the sentence says the same sound on repeat like a banger hook"</div>
+      <div class="eg-label">Assonance (vowel sound repetition)</div>
+      <div class="eg">"Atom Ant and his amazing abilities" → repetition of 'ah' sound</div>
+      <div class="eg">"How now brown cow?" → repetition of 'ow' sound</div>
+      <div class="eg-label">Consonance (consonant sound repetition)</div>
+      <div class="eg">"Peter Piper picked a peck of pickled peppers" → repetition of 'p' and 'ck' sounds</div>
+      <div class="eg">"Betty Boughter bought a bit of bitter butter" → 'b' and 't' sounds</div>
+    </div>
+
+    <!-- ONOMATOPOEIA -->
+    <div class="card c6" style="animation-delay:.3s">
+      <span class="emoji">🔊</span>
+      <h2>Onomatopoeia</h2>
+      <p class="def">The <strong>written expression of a sound on paper</strong>. It mimics the sound in real life — when you read it, you can HEAR it!</p>
+      <div class="slang">💥 "Onomatopoeia is when words literally sound like the thing they describe. SLAY."</div>
+      <div class="eg-label">Examples from your notes</div>
+      <div class="eg">"The air is filled with the BUZZING of the bees."</div>
+      <div class="eg">"CLICKY, CLOCKY, CLICKY CLOCK went her heels across the wooden floor."</div>
+      <div class="eg">Other examples: BANG, CRASH, SIZZLE, HISS, BOOM, SPLASH</div>
+    </div>
+
+    <!-- IDIOM -->
+    <div class="card c7 y7" style="animation-delay:.35s">
+      <span class="emoji">🗣️</span>
+      <h2>Idiom</h2>
+      <p class="def">A common phrase or expression that <strong>CANNOT be understood from the literal definitions</strong> of the original words. We call these idiomatic expressions!</p>
+      <div class="slang">🤯 "Idioms are like secret codes — the words say one thing but mean something totally different."</div>
+      <div class="eg-label">Examples from your notes</div>
+      <div class="eg">"Break a leg" = Good luck in a performance</div>
+      <div class="eg">"Piece of cake" = It's really easy</div>
+      <div class="eg">"Under the weather" = Feeling ill / sick</div>
+      <div class="eg">"Bite the bullet" = Force yourself to do something difficult</div>
+    </div>
+
+    <!-- PUN -->
+    <div class="card c8" style="animation-delay:.4s">
+      <span class="emoji">😂</span>
+      <h2>Pun</h2>
+      <p class="def">A <strong>play on words</strong> using homophones or homonyms. Usually intended to be humorous, but there are puns that are serious in nature too!</p>
+      <div class="slang">💀 "Puns are the dad jokes of figurative language. Cringe AND genius at the same time."</div>
+      <div class="eg-label">Examples from your notes</div>
+      <div class="eg">"I can't dance, my soul is too heavy." → SOUL (emotional) vs SOLE (bottom of foot)</div>
+      <div class="eg">"The store gave out batteries free of charge." → CHARGE (cost) vs CHARGE (battery power)</div>
+      <div class="eg-label">More puns from Page 1 of your notebook!</div>
+      <div class="eg">"Why did the bicycle fall over? Because it was TWO-TIRED." → too tired / two tyres 😭</div>
+      <div class="eg">"What do you call a bear with no teeth? A GUMMY bear." 🐻</div>
+      <div class="eg">"I used to be afraid of hurdles but I GOT OVER IT." 🏃</div>
+      <div class="eg">"What do you call an alligator in a vest? An IN-VEST-igator." 🐊</div>
+      <div class="eg">"Why can't you trust stairs? They're always UP TO SOMETHING." 😂</div>
+    </div>
+
+    <!-- OXYMORON -->
+    <div class="card c9" style="animation-delay:.45s">
+      <span class="emoji">🔁</span>
+      <h2>Oxymoron</h2>
+      <p class="def">Places two <strong>contradicting or opposing words</strong> together to create a unique, thought-provoking phrase.</p>
+      <div class="slang">🤔 "Oxymorons be out here making no sense but also making perfect sense. The paradox era."</div>
+      <div class="eg-label">Examples from your notes</div>
+      <div class="eg">Jumbo shrimp • Deafening silence • Bittersweet • Act natural</div>
+      <div class="eg">Original copy • Awfully good • Seriously funny • Sound of silence</div>
+    </div>
+
+    <!-- LITERAL -->
+    <div class="card c10" style="animation-delay:.5s">
+      <span class="emoji">📏</span>
+      <h2>Literal Language</h2>
+      <p class="def">When a phrase or word uses <strong>absolutely NO figurative devices</strong> — it means exactly what it says. No hidden meaning, no comparison, no exaggeration.</p>
+      <div class="slang">😐 "Literal language is just... saying what you mean. That's it. No sauce added."</div>
+      <div class="eg-label">Examples from your notes</div>
+      <div class="eg">"We had eggs and bacon for breakfast." (exactly what happened)</div>
+      <div class="eg">"It is raining a lot." (just the facts, no drama)</div>
+    </div>
+
+  </div><!-- end grid -->
+
+  <!-- SIMILE vs METAPHOR TABLE -->
+  <div class="tip-box" style="margin-top:28px; border-color:var(--pink)">
+    <h3 style="color:var(--pink)">🔭 vs 💫 Simile vs Metaphor — Know the Difference!</h3>
+    <table class="compare-table">
+      <tr><th>Feature</th><th>Simile</th><th>Metaphor</th></tr>
+      <tr><td>Uses like/as/than?</td><td>✅ YES</td><td>❌ NO</td></tr>
+      <tr><td>Says one thing IS another?</td><td>❌ NO</td><td>✅ YES</td></tr>
+      <tr><td>Strength of comparison</td><td>Weaker (only some things)</td><td>Stronger (all features)</td></tr>
+      <tr><td>Example</td><td>"He is LIKE a rocket"</td><td>"He IS a rocket"</td></tr>
+    </table>
+  </div>
+
+  <!-- MEMORY TIPS -->
+  <div class="tip-box" style="margin-top:16px">
+    <h3>🧠 Memory Hacks That Actually Slap</h3>
+    <ul>
+      <li>Simile = uses <strong>S</strong>imilar words (<strong>like, as, than</strong>) — S for Similar!</li>
+      <li>Hyperbole = <strong>CANNOT literally happen</strong>. If it's possible in real life → NOT a hyperbole.</li>
+      <li>Personification = object doing something a <strong>HUMAN</strong> does (running, crying, screaming, sleeping)</li>
+      <li>Alliteration = same <strong>SOUND</strong> repeated 3+ times — Assonance (vowels), Consonance (consonants)</li>
+      <li>Onomatopoeia = the word SOUNDS like what it describes (BUZZ, HISS, CLANG)</li>
+      <li>Idiom = you CANNOT understand it from the literal words alone</li>
+      <li>Oxymoron = TWO opposite/contradicting words side by side (jumbo shrimp 😭)</li>
+      <li>Pun = plays on words with <strong>homophones</strong> (same sound, different meaning) or <strong>homonyms</strong> (same word, different meaning)</li>
+      <li>Literal = NO figurative devices at all. Just the plain truth.</li>
+    </ul>
+  </div>
+
+  <!-- PUN JOKES -->
+  <div class="joke-box">
+    <h3>😂 The Pun Section (Your Notebook's Greatest Hits)</h3>
+    <div class="joke">Why did the bicycle fall over? Because it was <strong>two-tired</strong>! <span>TWO-TIRED = too tired (adjective) + two tyres (the wheels)</span></div>
+    <div class="joke">What do you call a bear with no teeth? A <strong>gummy</strong> bear! <span>GUMMY = no teeth + gummy (the candy)</span></div>
+    <div class="joke">I used to be afraid of hurdles but I <strong>got over it</strong>! <span>GOT OVER IT = overcame the fear + literally jumped over the hurdle</span></div>
+    <div class="joke">What do you call an alligator in a vest? An <strong>in-vest-i-gator</strong>! <span>INVESTIGATOR + vest + gator (alligator)</span></div>
+    <div class="joke">Why can't you trust stairs? They're always <strong>up to something</strong>! <span>UP TO SOMETHING = plotting + stairs literally go up</span></div>
+  </div>
+
+</div><!-- end guide -->
+
+<!-- ══════════ QUIZ ══════════ -->
+<div id="quiz" class="section">
+  <div class="quiz-header">
+    <h2>🎯 50-Question Practice Quiz</h2>
+    <p>Answer everything, then smash Submit to reveal your score! 🍦</p>
+    <div class="prog-wrap"><div class="prog-bar" id="progBar"></div></div>
+    <p id="ansCount" style="font-size:.88rem;color:#94a3b8">0 / 50 answered</p>
+  </div>
+  <div id="quizBox"></div>
+  <button class="submit-btn" onclick="submitQuiz()">🍦 Submit & See My Score!</button>
+  <div class="score-card" id="scoreCard">
+    <div class="score-emoji" id="scoreEmoji"></div>
+    <h2 id="scoreTitle"></h2>
+    <p id="scoreMsg"></p>
+    <button class="retry-btn" onclick="retryQuiz()">🔄 Try Again!</button>
+  </div>
+</div>
+
+<script>
+const Qs = [
+  // ── MULTIPLE CHOICE ──────────────────────────────
+  {id:1,type:'mc',q:'"She ran as fast as a cheetah." This is an example of a…',opts:['Metaphor','Simile','Hyperbole','Personification'],ans:1},
+  {id:2,type:'mc',q:'"The sun smiled down on us." What device is this?',opts:['Simile','Idiom','Personification','Oxymoron'],ans:2},
+  {id:3,type:'mc',q:'"I am so hungry I could eat a horse." This is a…',opts:['Simile','Metaphor','Hyperbole','Pun'],ans:2},
+  {id:4,type:'mc',q:'"Coffee is life as it awakens me." What type of comparison is this?',opts:['Simile','Metaphor','Personification','Hyperbole'],ans:1},
+  {id:5,type:'mc',q:'"Peter Piper picked a peck of pickled peppers." This is an example of…',opts:['Onomatopoeia','Personification','Alliteration','Idiom'],ans:2},
+  {id:6,type:'mc',q:'"The air is filled with the BUZZING of the bees." What device is BUZZING?',opts:['Alliteration','Onomatopoeia','Simile','Hyperbole'],ans:1},
+  {id:7,type:'mc',q:'"Break a leg!" — this is an example of…',opts:['Hyperbole','Simile','Pun','Idiom'],ans:3},
+  {id:8,type:'mc',q:'A pun plays on words using…',opts:['Exaggeration','Homophones or homonyms','Human actions given to objects','Two contradicting words'],ans:1},
+  {id:9,type:'mc',q:'"Jumbo shrimp" and "deafening silence" are examples of…',opts:['Idioms','Alliteration','Oxymorons','Metaphors'],ans:2},
+  {id:10,type:'mc',q:'"We had eggs and bacon for breakfast." This is…',opts:['A metaphor','A simile','Literal language','An idiom'],ans:2},
+  {id:11,type:'mc',q:'Which sentence uses a SIMILE?',opts:['"The road is a ribbon of moonlight."','"Her footsteps sound like the ticking of a clock."','"The fire roared to life."','"I need a million glasses of water."'],ans:1},
+  {id:12,type:'mc',q:'A metaphor says one thing…',opts:['is like another thing','is as something else','IS another thing','sounds like another thing'],ans:2},
+  {id:13,type:'mc',q:'"The alarm screamed as it woke me." The alarm is given what type of attribute?',opts:['Animal','Natural','Human','Supernatural'],ans:2},
+  {id:14,type:'mc',q:'Which of these is a HYPERBOLE?',opts:['"The dog barked loudly."','"She is as tall as a tree."','"I have told you a million times!"','"The leaves danced in the wind."'],ans:2},
+  {id:15,type:'mc',q:'"Why did the bicycle fall over? Because it was two-tired." What device is this?',opts:['Idiom','Oxymoron','Pun','Simile'],ans:2},
+  {id:16,type:'mc',q:'Alliteration is the repetition of the same sound…',opts:['once in a sentence','twice at the end of lines','three or more times in close succession','at the beginning of every paragraph'],ans:2},
+  {id:17,type:'mc',q:'Which is an example of ASSONANCE alliteration?',opts:['"Peter Piper picked…"','"Betty Boughter bought…"','"How now brown cow?"','"Clicky clocky clicky clock"'],ans:2},
+  {id:18,type:'mc',q:'"Piece of cake" as an idiom means…',opts:["It's delicious","It's really easy","It's a small portion","It's a celebration"],ans:1},
+  {id:19,type:'mc',q:'"The boat slept peacefully on the water." What device is this?',opts:['Simile','Hyperbole','Idiom','Personification'],ans:3},
+  {id:20,type:'mc',q:'Which sentence is an OXYMORON?',opts:['"She ran quickly."','"The fire is hot."','"It was awfully good."','"The dog barked at night."'],ans:2},
+  {id:21,type:'mc',q:'Onomatopoeia is best described as…',opts:['A comparison using like or as','A word that sounds like what it describes','An exaggeration to make a point','A play on words for humour'],ans:1},
+  {id:22,type:'mc',q:'Which of these is an example of ONOMATOPOEIA?',opts:['"She was as quiet as a mouse."','"The stars winked at us."','"The fizz of the soda filled the room."','"I have a mountain of work to do."'],ans:2},
+  {id:23,type:'mc',q:'"Under the weather" means…',opts:['Standing in the rain','Feeling ill or sick','Being outside','Cold weather approaching'],ans:1},
+  {id:24,type:'mc',q:'What makes a METAPHOR stronger than a simile?',opts:['It uses like or as','It compares ALL features of two things','It uses exaggeration','It uses contradicting words'],ans:1},
+  {id:25,type:'mc',q:'"Music is medicine for the soul." This is a…',opts:['Simile','Hyperbole','Personification','Metaphor'],ans:3},
+
+  // ── TRUE / FALSE ──────────────────────────────
+  {id:26,type:'tf',q:'"She is as happy as a horse" is a simile. 🔭',ans:true},
+  {id:27,type:'tf',q:'A metaphor uses the word "like" to make a comparison. 💫',ans:false},
+  {id:28,type:'tf',q:'A hyperbole can literally happen in real life. 📢',ans:false},
+  {id:29,type:'tf',q:'"The stars winked at us from the night sky" is personification. 🧍',ans:true},
+  {id:30,type:'tf',q:'Assonance is the repetition of CONSONANT sounds. 🔤',ans:false},
+  {id:31,type:'tf',q:'"Bite the bullet" is an idiomatic expression. 🗣️',ans:true},
+  {id:32,type:'tf',q:'An oxymoron joins two words that have SIMILAR meanings. 🔁',ans:false},
+  {id:33,type:'tf',q:'Onomatopoeia words sound like the things they describe. 🔊',ans:true},
+  {id:34,type:'tf',q:'"The store gave out batteries free of charge" is a pun. 😂',ans:true},
+  {id:35,type:'tf',q:'Literal language uses figurative devices to create a vivid image. 📏',ans:false},
+  {id:36,type:'tf',q:'"Cindy is a fish when she swims" is a metaphor. 💫',ans:true},
+  {id:37,type:'tf',q:'"Clicky, clocky, clicky clock" is an example of onomatopoeia. 🔊',ans:true},
+  {id:38,type:'tf',q:'A simile compares ALL elements and features of two things. 🔭',ans:false},
+  {id:39,type:'tf',q:'"I can\'t dance, my soul is too heavy" contains a pun on the word "soul/sole". 😂',ans:true},
+  {id:40,type:'tf',q:'Personification helps you imagine things more clearly in a story or poem. 🧍',ans:true},
+
+  // ── DRAG & DROP ──────────────────────────────
+  {id:41,type:'drag',
+    q:'🎯 Drag each sentence to its correct figurative language device!',
+    items:['A','B','C','D','E','F'],
+    labels:['A: "She is like a rocket on her bike."','B: "The door screamed as it opened."','C: "I have a billion things to do!"','D: "Her eyes are twinkling stars."','E: "Bite the bullet and do it."','F: "Peter Piper picked peppers."'],
+    targets:[
+      {label:'Simile',ans:'A'},
+      {label:'Personification',ans:'B'},
+      {label:'Hyperbole',ans:'C'},
+      {label:'Metaphor',ans:'D'},
+      {label:'Idiom',ans:'E'},
+      {label:'Alliteration',ans:'F'}
+    ]
+  },
+  {id:42,type:'drag',
+    q:'🎯 Match each example to its device — you\'ve got this bestie! 💅',
+    items:['G','H','I','J','K','L'],
+    labels:['G: "BUZZ went the bees."','H: "Jumbo shrimp"','I: "Why can\'t you trust stairs? They\'re up to something."','J: "We ate rice and peas for dinner."','K: "The cake was calling my name."','L: "The lightning stretched far over the night sky."'],
+    targets:[
+      {label:'Onomatopoeia',ans:'G'},
+      {label:'Oxymoron',ans:'H'},
+      {label:'Pun',ans:'I'},
+      {label:'Literal',ans:'J'},
+      {label:'Personification',ans:'K'},
+      {label:'Simile',ans:'L'}
+    ]
+  },
+
+  // ── TAP TO MATCH ──────────────────────────────
+  {id:43,type:'tap',
+    q:'🖐️ Tap a sentence, then tap its device to match them!',
+    pairs:[
+      {word:'"The alarm screamed."',cat:'Personification'},
+      {word:'"Awfully good"',cat:'Oxymoron'},
+      {word:'"I could eat a million plates!"',cat:'Hyperbole'},
+      {word:'"Fast as the wind"',cat:'Simile'},
+      {word:'"Clang! Bang! Crash!"',cat:'Onomatopoeia'}
+    ]
+  },
+  {id:44,type:'tap',
+    q:'🖐️ Tap the phrase, then tap its device! Don\'t fumble it! ✨',
+    pairs:[
+      {word:'"Under the weather"',cat:'Idiom'},
+      {word:'"Music IS medicine"',cat:'Metaphor'},
+      {word:'"Betty Boughter bought…"',cat:'Alliteration'},
+      {word:'"Two-tired bicycle"',cat:'Pun'},
+      {word:'"It is raining a lot."',cat:'Literal'}
+    ]
+  },
+
+  // ── MORE MC ───────────────────────────────────
+  {id:45,type:'mc',q:'"The food was so good that I almost asked for 100 more plates!" — This contains…',opts:['A simile','A hyperbole','A metaphor','An idiom'],ans:1},
+  {id:46,type:'mc',q:'Which sentence contains PERSONIFICATION?',opts:['"She ran quickly to school."','"The chocolate cake was calling my name."','"He is as smart as Einstein."','"It was bittersweet news."'],ans:1},
+  {id:47,type:'mc',q:'Which word is an example of ONOMATOPOEIA?',opts:['beautiful','slowly','SIZZLE','happiness'],ans:2},
+  {id:48,type:'mc',q:'"What do you call an alligator in a vest? An investigator." This is a…',opts:['Metaphor','Hyperbole','Pun','Idiom'],ans:2},
+  {id:49,type:'mc',q:'"Bittersweet" is an example of an oxymoron because…',opts:['It uses like or as','Bitter and sweet are opposite/contradicting tastes','It exaggerates a feeling','It mimics a sound'],ans:1},
+  {id:50,type:'mc',q:'🍦 FINAL QUESTION! Which list contains ONLY figurative language devices?',
+    opts:[
+      'Simile, Metaphor, Personification, Hyperbole, Alliteration, Onomatopoeia, Idiom, Pun, Oxymoron',
+      'Simile, Noun, Personification, Hyperbole, Verb, Onomatopoeia, Idiom, Pun, Oxymoron',
+      'Simile, Metaphor, Personification, Adjective, Alliteration, Onomatopoeia, Idiom, Pun, Oxymoron',
+      'Simile, Metaphor, Personification, Hyperbole, Alliteration, Conjunction, Idiom, Pun, Oxymoron'
+    ], ans:0},
+];
+
+// ═══════════ STATE ═══════════
+const userAns = {};
+const tapStates = {};
+
+// ═══════════ BUILD ═══════════
+function buildQuiz(){
+  const box = document.getElementById('quizBox');
+  box.innerHTML = '';
+  Qs.forEach((q,idx)=>{
+    const blk = document.createElement('div');
+    blk.className='q-block';
+    blk.id=`blk${q.id}`;
+    let html=`<div class="q-num">Q${idx+1} of ${Qs.length} • ${q.type==='mc'?'🔘 Multiple Choice':q.type==='tf'?'✅ True / False':q.type==='drag'?'🖱️ Drag & Drop':'🖐️ Tap to Match'}</div>`;
+    html+=`<div class="q-text">${q.q}</div>`;
+    if(q.type==='mc') html+=buildMC(q);
+    else if(q.type==='tf') html+=buildTF(q);
+    else if(q.type==='drag') html+=buildDrag(q);
+    else html+=buildTap(q);
+    html+=`<div class="fb" id="fb${q.id}"></div>`;
+    blk.innerHTML=html;
+    box.appendChild(blk);
+    if(q.type==='drag') initDrag(q);
+    if(q.type==='tap') initTap(q);
+  });
+  updateProg();
+}
+
+// MC
+function buildMC(q){
+  return '<div class="mc-opts">'+q.opts.map((o,i)=>`<button class="mc-opt" id="mc${q.id}-${i}" onclick="selMC(${q.id},${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join('')+'</div>';
+}
+function selMC(qid,idx){
+  if(userAns[qid]!==undefined)return;
+  userAns[qid]=idx;
+  document.querySelectorAll(`[id^="mc${qid}-"]`).forEach(b=>b.classList.remove('selected'));
+  document.getElementById(`mc${qid}-${idx}`).classList.add('selected');
+  updateProg();
+}
+
+// TF
+function buildTF(q){
+  return `<div class="tf-opts"><button class="tf-btn" id="tf${q.id}-T" onclick="selTF(${q.id},true)">✅ TRUE</button><button class="tf-btn" id="tf${q.id}-F" onclick="selTF(${q.id},false)">❌ FALSE</button></div>`;
+}
+function selTF(qid,val){
+  if(userAns[qid]!==undefined)return;
+  userAns[qid]=val;
+  document.getElementById(`tf${qid}-T`).className='tf-btn'+(val===true?' sel-t':'');
+  document.getElementById(`tf${qid}-F`).className='tf-btn'+(val===false?' sel-f':'');
+  updateProg();
+}
+
+// DRAG
+function buildDrag(q){
+  let h=`<div style="background:#faf5ff;border-radius:12px;padding:12px;margin-bottom:12px;font-size:.83rem;font-weight:700;color:#7c3aed">`;
+  q.labels.forEach(l=>{ h+=`<div>${l}</div>`; });
+  h+=`</div><div class="pool" id="pool${q.id}">`;
+  q.items.forEach(item=>{ h+=`<div class="chip" id="chip${q.id}-${item}" draggable="true" data-qid="${q.id}" data-val="${item}">${item}</div>`; });
+  h+=`</div><div>`;
+  q.targets.forEach(t=>{ h+=`<div class="drop-row" id="drop${q.id}-${t.ans}" data-qid="${q.id}" data-target="${t.ans}"><div class="drop-label">${t.label}</div><div class="drop-zone" id="zone${q.id}-${t.ans}"></div></div>`; });
+  h+=`</div>`;
+  return h;
+}
+function initDrag(q){
+  document.querySelectorAll(`[data-qid="${q.id}"].chip`).forEach(chip=>{
+    chip.addEventListener('dragstart',e=>{e.dataTransfer.setData('text/plain',chip.dataset.val+'|'+q.id);});
+  });
+  document.querySelectorAll(`[id^="drop${q.id}-"]`).forEach(row=>{
+    row.addEventListener('dragover',e=>{e.preventDefault();row.classList.add('drag-over');});
+    row.addEventListener('dragleave',()=>row.classList.remove('drag-over'));
+    row.addEventListener('drop',e=>{
+      e.preventDefault();row.classList.remove('drag-over');
+      const [val,qid]=e.dataTransfer.getData('text/plain').split('|');
+      placeChip(qid,val,row.dataset.target);
+    });
+  });
+  // touch
+  let tc=null,gh=null;
+  document.querySelectorAll(`[data-qid="${q.id}"].chip`).forEach(chip=>{
+    chip.addEventListener('touchstart',e=>{tc=chip;gh=chip.cloneNode(true);gh.style.cssText='position:fixed;opacity:.75;pointer-events:none;z-index:9999;transform:scale(1.1);';document.body.appendChild(gh);},{passive:true});
+    chip.addEventListener('touchmove',e=>{const t=e.touches[0];if(gh){gh.style.left=(t.clientX-24)+'px';gh.style.top=(t.clientY-18)+'px';}document.querySelectorAll(`[id^="drop${q.id}-"]`).forEach(row=>{const r=row.getBoundingClientRect();row.classList.toggle('drag-over',t.clientX>=r.left&&t.clientX<=r.right&&t.clientY>=r.top&&t.clientY<=r.bottom);});},{passive:true});
+    chip.addEventListener('touchend',e=>{if(gh){gh.remove();gh=null;}const t=e.changedTouches[0];document.querySelectorAll(`[id^="drop${q.id}-"]`).forEach(row=>{const r=row.getBoundingClientRect();row.classList.remove('drag-over');if(t.clientX>=r.left&&t.clientX<=r.right&&t.clientY>=r.top&&t.clientY<=r.bottom)placeChip(q.id,tc.dataset.val,row.dataset.target);});});
+  });
+}
+function placeChip(qid,val,target){
+  const zone=document.getElementById(`zone${qid}-${target}`);
+  if(!zone||zone.querySelector('.pchip'))return;
+  const orig=document.getElementById(`chip${qid}-${val}`);
+  if(!orig||orig.classList.contains('placed'))return;
+  orig.classList.add('placed');
+  zone.innerHTML=`<div class="pchip">${val}<span class="rm" onclick="removeChip('${qid}','${val}','${target}')">✕</span></div>`;
+  if(!userAns[qid])userAns[qid]={};
+  userAns[qid][target]=val;
+  updateProg();
+}
+function removeChip(qid,val,target){
+  const zone=document.getElementById(`zone${qid}-${target}`);
+  if(zone)zone.innerHTML='';
+  const orig=document.getElementById(`chip${qid}-${val}`);
+  if(orig)orig.classList.remove('placed');
+  if(userAns[qid])delete userAns[qid][target];
+  updateProg();
+}
+
+// TAP
+function buildTap(q){
+  const sh=a=>[...a].sort(()=>Math.random()-.5);
+  const words=sh(q.pairs.map(p=>p.word));
+  const cats=sh(q.pairs.map(p=>p.cat));
+  let h=`<div class="tap-wrap"><div class="tap-row"><div class="tap-col"><div class="tap-col-label">Phrases</div>`;
+  words.forEach(w=>{const k=w.replace(/[^a-zA-Z0-9]/g,'');h+=`<span class="tap-chip wchip" id="tw${q.id}-${k}" onclick="tapW(${q.id},'${w.replace(/'/g,"\\'")}','${k}')">${w}</span>`;});
+  h+=`</div><div class="tap-col"><div class="tap-col-label">Device</div>`;
+  cats.forEach(c=>{const k=c.replace(/[^a-zA-Z]/g,'');h+=`<span class="tap-chip cchip" id="tc${q.id}-${k}" onclick="tapC(${q.id},'${c}','${k}')">${c}</span>`;});
+  h+=`</div></div></div>`;
+  return h;
+}
+function initTap(q){tapStates[q.id]={sel:null,matched:[],pairs:q.pairs};}
+function tapW(qid,word,key){
+  const s=tapStates[qid];
+  if(s.matched.find(m=>m.word===word))return;
+  if(s.sel===word){document.getElementById(`tw${qid}-${key}`).classList.remove('sel');s.sel=null;return;}
+  if(s.sel){const pk=s.sel.replace(/[^a-zA-Z0-9]/g,'');const pe=document.getElementById(`tw${qid}-${pk}`);if(pe)pe.classList.remove('sel');}
+  s.sel=word;document.getElementById(`tw${qid}-${key}`).classList.add('sel');
+}
+function tapC(qid,cat,ckey){
+  const s=tapStates[qid];
+  if(!s.sel)return;
+  const word=s.sel;const wkey=word.replace(/[^a-zA-Z0-9]/g,'');
+  const pair=s.pairs.find(p=>p.word===word);
+  const wEl=document.getElementById(`tw${qid}-${wkey}`);
+  const cEl=document.getElementById(`tc${qid}-${ckey}`);
+  if(pair&&pair.cat===cat){
+    s.matched.push({word,cat});
+    if(wEl){wEl.className='tap-chip wchip done';wEl.onclick=null;}
+    if(cEl){cEl.classList.add('matched');cEl.onclick=null;}
+    s.sel=null;
+    if(!userAns[qid])userAns[qid]=[];
+    userAns[qid].push({word,cat,ok:true});
+    if(s.matched.length===s.pairs.length)updateProg();
+  } else {
+    if(cEl){cEl.classList.add('bad');setTimeout(()=>cEl.classList.remove('bad'),500);}
+    if(wEl){const orig=wEl.className;wEl.style.outline='3px solid var(--red)';setTimeout(()=>wEl.style.outline='',400);}
+  }
+  updateProg();
+}
+
+// PROGRESS
+function updateProg(){
+  let n=0;
+  Qs.forEach(q=>{
+    if(q.type==='mc'&&userAns[q.id]!==undefined)n++;
+    else if(q.type==='tf'&&userAns[q.id]!==undefined)n++;
+    else if(q.type==='drag'&&userAns[q.id]&&Object.keys(userAns[q.id]).length===q.targets.length)n++;
+    else if(q.type==='tap'&&tapStates[q.id]&&tapStates[q.id].matched.length===tapStates[q.id].pairs.length)n++;
+  });
+  document.getElementById('progBar').style.width=(n/Qs.length*100)+'%';
+  document.getElementById('ansCount').textContent=`${n} / ${Qs.length} answered`;
+}
+
+// SUBMIT
+function submitQuiz(){
+  let score=0;
+  Qs.forEach(q=>{
+    const blk=document.getElementById(`blk${q.id}`);
+    const fb=document.getElementById(`fb${q.id}`);
+    let ok=false;
+    if(q.type==='mc'){
+      const ua=userAns[q.id];
+      q.opts.forEach((_,i)=>{
+        const b=document.getElementById(`mc${q.id}-${i}`);
+        if(!b)return;
+        if(i===q.ans)b.classList.add('rev-correct');
+        else if(i===ua&&i!==q.ans)b.classList.add('rev-wrong');
+        b.onclick=null;
+      });
+      ok=ua===q.ans;
+      fb.className='fb '+(ok?'ok':'no');
+      fb.textContent=ok?'✅ Correct! Periodt.':'❌ The answer was: '+String.fromCharCode(65+q.ans)+'. '+q.opts[q.ans];
+    } else if(q.type==='tf'){
+      const ua=userAns[q.id];
+      const tB=document.getElementById(`tf${q.id}-T`),fB=document.getElementById(`tf${q.id}-F`);
+      if(q.ans){if(tB)tB.classList.add('rev-correct');if(fB&&ua===false)fB.classList.add('rev-wrong');}
+      else{if(fB)fB.classList.add('rev-correct');if(tB&&ua===true)tB.classList.add('rev-wrong');}
+      if(tB)tB.onclick=null;if(fB)fB.onclick=null;
+      ok=ua===q.ans;
+      fb.className='fb '+(ok?'ok':'no');
+      fb.textContent=ok?'✅ Correct! Slay!':'❌ The answer is: '+(q.ans?'TRUE ✅':'FALSE ❌');
+    } else if(q.type==='drag'){
+      const um=userAns[q.id]||{};let all=true;
+      q.targets.forEach(t=>{
+        const row=document.getElementById(`drop${q.id}-${t.ans}`);
+        if(um[t.ans]===t.ans){if(row)row.classList.add('rev-correct');}
+        else{if(row)row.classList.add('rev-wrong');all=false;}
+      });
+      ok=all;
+      fb.className='fb '+(ok?'ok':'no');
+      fb.textContent=ok?'✅ All matched correctly! You cooked! 🔥':'❌ Some matches were wrong. Check the red rows.';
+    } else if(q.type==='tap'){
+      const s=tapStates[q.id];
+      ok=s&&s.matched.length===s.pairs.length;
+      fb.className='fb '+(ok?'ok':'no');
+      fb.textContent=ok?'✅ Perfect! You\'re built different! 💅':`❌ You got ${s?s.matched.length:0} of ${q.pairs.length} correct.`;
+    }
+    if(ok)score++;
+    if(blk)blk.classList.add(ok?'correct':'wrong');
+  });
+  const pct=Math.round(score/Qs.length*100);
+  const m=document.getElementById('scoreCard');m.classList.add('show');
+  document.getElementById('scoreEmoji').textContent=pct===100?'🍦🎉🏆':pct>=80?'🔥💅✨':pct>=60?'😤💪':'😭📚';
+  document.getElementById('scoreTitle').textContent=`${score} / ${Qs.length} — ${pct}%`;
+  let msg='';
+  if(pct===100)msg='PERIODT BESTIE! 100%!! The ice cream is SECURED! 🍦🍦🍦 You absolutely ate and left no crumbs. Straight up COOKED this quiz. Go show the teacher what main character energy looks like! 👑';
+  else if(pct>=90)msg=`SO close!! Just ${Qs.length-score} question${Qs.length-score===1?'':'s'} off. Review the ones in red and try again — that ice cream is basically already yours. You got this! 💪`;
+  else if(pct>=75)msg=`Good effort! But we need 100% for ice cream 😅 Go back to the Guide tab, check the devices you missed (shown in red), and run it again. You can do this!`;
+  else msg=`Don't stress it bestie! 😭 Head back to the Guide tab and re-read the definitions and examples for each device. Pay special attention to the ones highlighted red. The ice cream is still waiting for you! 🍦`;
+  document.getElementById('scoreMsg').textContent=msg;
+  m.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function retryQuiz(){
+  Object.keys(userAns).forEach(k=>delete userAns[k]);
+  Object.keys(tapStates).forEach(k=>delete tapStates[k]);
+  document.getElementById('scoreCard').classList.remove('show');
+  buildQuiz();
+  document.getElementById('quizBox').scrollIntoView({behavior:'smooth'});
+}
+
+function showTab(name){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(name).classList.add('active');
+  document.querySelector(`[onclick="showTab('${name}')"]`).classList.add('active');
+}
+
+buildQuiz();
+</script>
+</body>
+</html>
