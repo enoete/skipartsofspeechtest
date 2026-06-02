@@ -168,7 +168,7 @@
 
 <div class="tabs">
   <button class="tab-btn active" onclick="showTab('guide')">📖 Guide</button>
-  <button class="tab-btn" onclick="showTab('quiz')">✏️ Quiz (50 Qs)</button>
+  <button class="tab-btn" onclick="showTab('quiz')">✏️ Quiz (60 Qs)</button>
 </div>
 
 <!-- ══════════ GUIDE ══════════ -->
@@ -362,7 +362,7 @@
 <div id="quiz" class="section">
   <div class="quiz-header">
     <h2>🎯 50-Question Practice Quiz</h2>
-    <p>Answer everything, then smash Submit to reveal your score! 🍦</p>
+    <p>60 questions — answer them all, then smash Submit! 🍦</p>
     <div class="prog-wrap"><div class="prog-bar" id="progBar"></div></div>
     <p id="ansCount" style="font-size:.88rem;color:#94a3b8">0 / 50 answered</p>
   </div>
@@ -478,13 +478,40 @@ const Qs = [
   {id:47,type:'mc',q:'Which word is an example of ONOMATOPOEIA?',opts:['beautiful','slowly','SIZZLE','happiness'],ans:2},
   {id:48,type:'mc',q:'"What do you call an alligator in a vest? An investigator." This is a…',opts:['Metaphor','Hyperbole','Pun','Idiom'],ans:2},
   {id:49,type:'mc',q:'"Bittersweet" is an example of an oxymoron because…',opts:['It uses like or as','Bitter and sweet are opposite/contradicting tastes','It exaggerates a feeling','It mimics a sound'],ans:1},
-  {id:50,type:'mc',q:'🍦 FINAL QUESTION! Which list contains ONLY figurative language devices?',
+  {id:50,type:'mc',q:'Which list contains ONLY figurative language devices?',
     opts:[
       'Simile, Metaphor, Personification, Hyperbole, Alliteration, Onomatopoeia, Idiom, Pun, Oxymoron',
       'Simile, Noun, Personification, Hyperbole, Verb, Onomatopoeia, Idiom, Pun, Oxymoron',
       'Simile, Metaphor, Personification, Adjective, Alliteration, Onomatopoeia, Idiom, Pun, Oxymoron',
       'Simile, Metaphor, Personification, Hyperbole, Alliteration, Conjunction, Idiom, Pun, Oxymoron'
     ], ans:0},
+
+  // ── QUESTIONS 51–60 ───────────────────────────
+  {id:51,type:'tf',q:'"The lightning stretched far over the night sky" is a simile. 🔭',ans:false},
+  {id:52,type:'tf',q:'An idiom\'s meaning CAN be understood from the literal words used. 🗣️',ans:false},
+  {id:53,type:'tf',q:'"Sound of silence" is an oxymoron because silence has no sound. 🔁',ans:true},
+  {id:54,type:'tf',q:'Consonance alliteration repeats VOWEL sounds. 🔤',ans:false},
+  {id:55,type:'mc',q:'"The ice cream was as a ice cube." — If we fix the grammar to "as cold as", what device is this?',opts:['Metaphor','Personification','Simile','Hyperbole'],ans:2},
+  {id:56,type:'mc',q:'Which sentence is the BEST example of onomatopoeia?',opts:['"She was very quiet."','"The thunder BOOMED across the sky."','"He is a lion when he plays football."','"I have waited a thousand years for this!"'],ans:1},
+  {id:57,type:'mc',q:'"Original copy" is an oxymoron. Why?',opts:['It repeats the same sound','Original and copy are opposite in meaning','It exaggerates an idea','It compares two unlike things'],ans:1},
+  {id:58,type:'tap',
+    q:'🖐️ Tap the phrase, then tap its device — final round, go off!! 🔥',
+    pairs:[
+      {word:'"Her footsteps tick like a clock"',cat:'Simile'},
+      {word:'"The wind whispered secrets"',cat:'Personification'},
+      {word:'"I\'ve told you a billion times!"',cat:'Hyperbole'},
+      {word:'"Atom Ant and his amazing abilities"',cat:'Alliteration'},
+      {word:'"Act natural"',cat:'Oxymoron'}
+    ]
+  },
+  {id:59,type:'mc',q:'"I can\'t dance, my soul is too heavy." — The pun is on which word?',opts:['Dance','Heavy','Soul / Sole','Can\'t'],ans:2},
+  {id:60,type:'mc',q:'🍦 THE REAL FINAL QUESTION! What is the KEY difference between an idiom and literal language?',
+    opts:[
+      'Idioms rhyme; literal language does not',
+      'Idioms cannot be understood from the literal word meanings; literal language means exactly what it says',
+      'Idioms use like or as; literal language does not',
+      'Idioms are always funny; literal language is always serious'
+    ], ans:1},
 ];
 
 // ═══════════ STATE ═══════════
